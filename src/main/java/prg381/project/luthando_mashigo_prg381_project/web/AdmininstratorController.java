@@ -22,7 +22,7 @@ public class AdmininstratorController {
     @GetMapping("/admin/new")
 	public String createAdminForm(Model model) {
 		
-		// create student object to hold student form data
+		// create admin object to hold student form data
 		Administrator administrator = new Administrator();
 		model.addAttribute("administrator", administrator);
 		return "AdminRegistration";
@@ -30,8 +30,8 @@ public class AdmininstratorController {
 	}
 	
 	@PostMapping("/admins")
-	public String saveStudent(@ModelAttribute("administrator") Administrator administrator) {
-		adminService.save(administrator);
+	public String saveAdmin(@ModelAttribute("administrator") Administrator administrator) {
+		adminService.saveAdministrator(administrator);
 		return "redirect:/AdminLogin";
 	}
 

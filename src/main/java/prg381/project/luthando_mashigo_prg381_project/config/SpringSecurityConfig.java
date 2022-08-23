@@ -52,7 +52,8 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
             "/AdminLogin?Logout",
             "/students",   
             "/students/**", 
-            "/admin/**",        
+            "/admin/**",  
+            "/admins",      
             "/js/**",
             "/css/**",
             "/img/**").permitAll()

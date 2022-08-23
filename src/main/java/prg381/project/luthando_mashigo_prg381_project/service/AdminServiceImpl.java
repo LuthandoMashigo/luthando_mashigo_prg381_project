@@ -25,9 +25,11 @@ public class AdminServiceImpl implements AdminService {
     private BCryptPasswordEncoder passwordEncoder;
 
     @Override
-    public Administrator save(Administrator administrator) {
-            Administrator administrator2 = new Administrator(administrator.getAdmin_name(), administrator.getEmail(), 
-            passwordEncoder.encode(administrator.getPassword()), administrator.getContact(), Arrays.asList(new Role_Admin("ROLE_ADMIN")));
+    public Administrator saveAdministrator(Administrator administrator) {
+            Administrator administrator2 = new Administrator(administrator.getAdmin_name(),
+             administrator.getEmail(), 
+            passwordEncoder.encode(administrator.getPassword()), 
+            administrator.getContact(), Arrays.asList(new Role_Admin("ROLE_ADMIN")));
 
             return adminRepository.save(administrator2);
     }

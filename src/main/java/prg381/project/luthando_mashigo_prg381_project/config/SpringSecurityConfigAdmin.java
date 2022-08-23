@@ -52,6 +52,7 @@ public class SpringSecurityConfigAdmin extends WebSecurityConfigurerAdapter{
             "/students",   
             "/students/**",
             "/admin/**",
+            "/admins",
             "/js/**",
             "/css/**",
             "/img/**").permitAll()
