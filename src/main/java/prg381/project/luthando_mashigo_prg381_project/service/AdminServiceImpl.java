@@ -26,6 +26,7 @@ public class AdminServiceImpl implements AdminService {
         this.adminRepository = adminRepository;
     }
 
+     //This for encyrpting passwords and is neccessary for Spring Security to function
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
 

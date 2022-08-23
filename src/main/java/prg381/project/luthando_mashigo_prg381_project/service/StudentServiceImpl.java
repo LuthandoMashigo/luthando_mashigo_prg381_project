@@ -24,6 +24,7 @@ public class StudentServiceImpl implements StudentService{
     
     private StudentRepository studentRepository;
 
+    //This for encyrpting passwords and is neccessary for Spring Security to function
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
 

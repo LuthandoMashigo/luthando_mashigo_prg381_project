@@ -22,6 +22,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
     @Autowired
     private StudentService studentService;
 
+     //This for encyrpting passwords and is neccessary for Spring Security to function
     @Bean
     public BCryptPasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();

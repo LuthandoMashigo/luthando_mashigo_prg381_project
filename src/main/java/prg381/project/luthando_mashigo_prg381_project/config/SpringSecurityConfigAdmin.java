@@ -22,6 +22,7 @@ public class SpringSecurityConfigAdmin extends WebSecurityConfigurerAdapter{
     @Autowired
     private AdminService adminService;
 
+     //This for encyrpting passwords and is neccessary for Spring Security to function
     @Bean
     public BCryptPasswordEncoder pwEncoder(){
         return new BCryptPasswordEncoder();
@@ -48,7 +49,7 @@ public class SpringSecurityConfigAdmin extends WebSecurityConfigurerAdapter{
             "/StudentRegistration**",
             "/AdminRegistration**",
             "/StudentLogin**",
-            "/StudentView**",
+            "/studentsview**",
             "/students",   
             "/students/**",
             "/admin/**",
