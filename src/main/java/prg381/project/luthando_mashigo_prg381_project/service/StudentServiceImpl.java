@@ -10,6 +10,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import prg381.project.luthando_mashigo_prg381_project.model.Register;
@@ -20,8 +21,11 @@ import prg381.project.luthando_mashigo_prg381_project.repository.StudentReposito
 @Service
 public class StudentServiceImpl implements StudentService{
 
-    @Autowired
+    
     private StudentRepository studentRepository;
+
+    @Autowired
+    private BCryptPasswordEncoder passwordEncoder;
 
     public StudentServiceImpl(StudentRepository studentRepository) {
         super();
@@ -51,7 +55,7 @@ public class StudentServiceImpl implements StudentService{
 
         Student student2 = new Student(student.getStudent_name(), 
         student.getStudent_address(), student.getEmail(),
-         student.getStudent_password(), Arrays.asList(new Role_Student("ROLE_STUDENT")),Arrays.asList(new Register("PRG381")));
+         passwordEncoder.encode(student.getStudent_password()), Arrays.asList(new Role_Student("ROLE_STUDENT")),Arrays.asList(new Register("PRG381")));
 
         return studentRepository.save(student2);
     }

@@ -53,7 +53,7 @@ public class StudentController {
 		return "UpdateStudent";
 	}
 
-	@PostMapping("/students/{id}")
+	@PostMapping("/updstudents/{id}")
 	public String updateStudent(@PathVariable Long id,
 			@ModelAttribute("student") Student student,
 			Model model) {
