@@ -2,9 +2,12 @@ package prg381.project.luthando_mashigo_prg381_project.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import prg381.project.luthando_mashigo_prg381_project.model.Student;
 import prg381.project.luthando_mashigo_prg381_project.repository.StudentRepository;
 
+@Service
 public class StudentServiceImpl implements StudentService{
 
     private StudentRepository studentRepository;
