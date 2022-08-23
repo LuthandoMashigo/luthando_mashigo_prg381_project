@@ -1,5 +1,6 @@
 package prg381.project.luthando_mashigo_prg381_project.web;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +13,7 @@ import prg381.project.luthando_mashigo_prg381_project.service.AdminService;
 @Controller
 public class AdmininstratorController {
 
+	@Autowired
     private AdminService adminService;
 
     @GetMapping("/AdminLogin") 
@@ -34,5 +36,5 @@ public class AdmininstratorController {
 		adminService.saveAdministrator(administrator);
 		return "redirect:/AdminLogin";
 	}
-
+	
 }

@@ -22,6 +22,7 @@ public class AdminServiceImpl implements AdminService {
     private AdminRepository adminRepository;
 
     public AdminServiceImpl(AdminRepository adminRepository) {
+        super();
         this.adminRepository = adminRepository;
     }
 

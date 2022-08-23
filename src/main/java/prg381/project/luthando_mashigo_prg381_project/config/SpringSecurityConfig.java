@@ -16,7 +16,7 @@ import prg381.project.luthando_mashigo_prg381_project.service.StudentService;
 
 @Configuration
 @EnableWebSecurity
-@Order(1)
+@Order(2)
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
 
     @Autowired
@@ -46,6 +46,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests().antMatchers(
             "/AdminRegistration**",
+            "/StudentLogin",
             "/AdminLogin**", 
             "/AdminView**",
             "/LogoutAdmin**",
@@ -61,7 +62,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
             .and()
             .formLogin()
             .loginPage("/StudentLogin")
-            .defaultSuccessUrl("/students", true)
+            .defaultSuccessUrl("/studentsview", true)
             .permitAll()
             .and()
             .logout()

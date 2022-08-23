@@ -25,6 +25,11 @@ public class StudentController {
         return "StudentLogin";
     }
 
+	@PostMapping("/StudentLogin")
+	public String name() {
+		return "redirect:/studentsview";	
+	}
+
     @GetMapping("/students")
     public String listStudents(Model model) {
 		model.addAttribute("students", studentService.getAllStudents());
