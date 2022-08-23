@@ -47,6 +47,16 @@ public class Student {
             name = "role_student_id", referencedColumnName = "id"))
 
     private Collection<Role_Student> role_student;
+
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(
+        name = "student_register",
+        joinColumns = @JoinColumn(
+            name = "student__id", referencedColumnName = "id"),
+        inverseJoinColumns = @JoinColumn(
+            name = "register_id", referencedColumnName = "id"))
+
+    private Collection<Register> registers;
     
     
     public Student() {
@@ -54,14 +64,23 @@ public class Student {
     
 
 
+
+
+
+
     public Student(String student_name, String student_address, String email, String student_password,
-            Collection<Role_Student> role_student) {
+            Collection<Role_Student> role_student, Collection<Register> registers) {
         this.student_name = student_name;
         this.student_address = student_address;
         this.email = email;
         this.student_password = student_password;
         this.role_student = role_student;
+        this.registers = registers;
     }
+
+
+
+
 
 
 
