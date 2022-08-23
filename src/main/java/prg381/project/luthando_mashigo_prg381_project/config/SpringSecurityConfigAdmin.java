@@ -67,6 +67,6 @@ public class SpringSecurityConfigAdmin extends WebSecurityConfigurerAdapter{
             .logoutSuccessUrl("/AdminLogin?Logout")
             .permitAll();
     }
-    
+}
 
 
