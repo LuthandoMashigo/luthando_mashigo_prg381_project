@@ -12,6 +12,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import prg381.project.luthando_mashigo_prg381_project.model.Register;
 import prg381.project.luthando_mashigo_prg381_project.model.Role_Student;
 import prg381.project.luthando_mashigo_prg381_project.model.Student;
 import prg381.project.luthando_mashigo_prg381_project.repository.StudentRepository;
@@ -50,7 +51,7 @@ public class StudentServiceImpl implements StudentService{
 
         Student student2 = new Student(student.getStudent_name(), 
         student.getStudent_address(), student.getEmail(),
-         student.getStudent_password(), Arrays.asList(new Role_Student("ROLE_STUDENT")));
+         student.getStudent_password(), Arrays.asList(new Role_Student("ROLE_STUDENT")),Arrays.asList(new Register("PRG381")));
 
         return studentRepository.save(student2);
     }
