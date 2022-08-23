@@ -48,7 +48,7 @@ public class Student {
 
     private Collection<Role_Student> role_student;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(
         name = "student_register",
         joinColumns = @JoinColumn(
@@ -61,11 +61,6 @@ public class Student {
     
     public Student() {
     }
-    
-
-
-
-
 
 
     public Student(String student_name, String student_address, String email, String student_password,

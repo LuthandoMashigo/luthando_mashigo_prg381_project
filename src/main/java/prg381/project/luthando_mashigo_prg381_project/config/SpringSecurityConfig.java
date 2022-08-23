@@ -47,12 +47,12 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
         http.authorizeRequests().antMatchers(
             "/UpdateRegistar/**",
             "/AdminRegistration**",
-            "/StudentRegistration**",
             "/AdminLogin**", 
             "/AdminView**",
             "/LogoutAdmin**",
             "/AdminLogin?Logout",
-            "/students",            
+            "/students",   
+            "/students/**",         
             "/js/**",
             "/css/**",
             "/img/**").permitAll()
