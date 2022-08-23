@@ -35,7 +35,7 @@ public class Student {
     private String email;
 
     @Column(name = "student_password")
-    private String password;
+    private String student_password;
 
     //Students can be have diffrent roles and a role can be handle by multiple students 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
@@ -52,14 +52,18 @@ public class Student {
     public Student() {
     }
     
-    public Student(String student_name, String student_address, String email, String password,
+
+
+    public Student(String student_name, String student_address, String email, String student_password,
             Collection<Role_Student> role_student) {
         this.student_name = student_name;
         this.student_address = student_address;
         this.email = email;
-        this.password = password;
+        this.student_password = student_password;
         this.role_student = role_student;
     }
+
+
 
     public Long getId() {
         return id;
@@ -93,13 +97,7 @@ public class Student {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
-    }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
     public Collection<Role_Student> getRole_student() {
         return role_student;
@@ -107,5 +105,17 @@ public class Student {
 
     public void setRole_student(Collection<Role_Student> role_student) {
         this.role_student = role_student;
+    }
+
+
+
+    public String getStudent_password() {
+        return student_password;
+    }
+
+
+
+    public void setStudent_password(String student_password) {
+        this.student_password = student_password;
     }
 }

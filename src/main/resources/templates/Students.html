@@ -22,7 +22,7 @@
                         class="icon-bar"></span> <span class="icon-bar"></span> <span
                         class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#" th:href="@{/Students}"> Student View</a>
+                <a class="navbar-brand" href="#" th:href="@{/students}"> Student View</a>
             </div>
             <!-- <div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
@@ -36,6 +36,9 @@
     <!--Content Section-->
     <div align="center" class="container my-2">
         <h1>Student Register</h1>
+
+        <a th:href ="@{/students/new}" class="btn btn-primary btn-sm mb-3"> Register a Student </a>
+
         <table border="1" class ="table table-striped table-responsive-md">
             <thead>
                 <tr>
@@ -53,7 +56,7 @@
                     <td th:text="${student.student_name}"></td>
                     <td th:text="${student.student_address}"></td>
                     <td th:text="${student.email}"></td>
-                    <td th:text="${student.password}"></td>
+                    <td th:text="${student.student_password}"></td>
                     <!-- <td th:text="${register.course_name}"></td> -->
                     <td>
 						<a th:href = "@{/students/edit/{id}(id=${student.id})}"

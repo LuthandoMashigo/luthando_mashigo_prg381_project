@@ -1,19 +1,20 @@
 package prg381.project.luthando_mashigo_prg381_project.service;
 
+import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import prg381.project.luthando_mashigo_prg381_project.model.Role_Student;
 import prg381.project.luthando_mashigo_prg381_project.model.Student;
 import prg381.project.luthando_mashigo_prg381_project.repository.StudentRepository;
 
 @Service
 public class StudentServiceImpl implements StudentService{
 
+    @Autowired
     private StudentRepository studentRepository;
-
-    public StudentServiceImpl() {
-    }
 
     public StudentServiceImpl(StudentRepository studentRepository) {
         super();
@@ -40,7 +41,11 @@ public class StudentServiceImpl implements StudentService{
 
     @Override
     public Student saveStudent(Student student) {
-        return studentRepository.save(student);
+
+        Student student2 = new Student(student.getStudent_name(), 
+        student.getStudent_address(), student.getEmail(), student.getStudent_password(), Arrays.asList(new Role_Student("ROLE_STUDENT")));
+
+        return studentRepository.save(student2);
     }
 
     @Override
