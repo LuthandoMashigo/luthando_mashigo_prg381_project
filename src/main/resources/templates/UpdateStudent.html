@@ -44,8 +44,7 @@
 				</div>
 
 				<h1>Student Registration</h1>
-				<form th:action="@{/StudentRegistration}" method="post"  th:object="${student}">
-					<div th:object="${register}">
+				<form th:action="@{/students/{id}(id-${student.id})}" method="post"  th:object="${student}">
 						<div class="form-group">
 							<label class="control-label" for="studentName"> Student Name </label>
 							<input id="studentName" class="form-control" th:field="*{student_name}"
@@ -75,7 +74,6 @@
 								id="studentPassword" class="form-control"
 								th:field="*{course_name}" required autofocus="autofocus" />
 						</div>
-					</div>
 					<div class="form-group">
 						<button type="submit" class="btn btn-success">Register</button>
 						<span>Already registered? <a href="/" th:href="@{/StudentLogin}">Login
