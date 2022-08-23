@@ -21,6 +21,10 @@ public class AdminServiceImpl implements AdminService {
 
     private AdminRepository adminRepository;
 
+    public AdminServiceImpl(AdminRepository adminRepository) {
+        this.adminRepository = adminRepository;
+    }
+
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
 
