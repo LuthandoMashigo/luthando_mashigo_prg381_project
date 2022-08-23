@@ -51,7 +51,8 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
             "/AdminLogin**", 
             "/AdminView**",
             "/LogoutAdmin**",
-            "/AdminLogin?Logout",            
+            "/AdminLogin?Logout",
+            "/students",            
             "/js/**",
             "/css/**",
             "/img/**").permitAll()
@@ -59,7 +60,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
             .and()
             .formLogin()
             .loginPage("/StudentLogin")
-            .defaultSuccessUrl("/StudentView", true)
+            .defaultSuccessUrl("/students", true)
             .permitAll()
             .and()
             .logout()
