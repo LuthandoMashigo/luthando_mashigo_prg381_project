@@ -16,7 +16,7 @@ import prg381.project.luthando_mashigo_prg381_project.service.AdminService;
 
 @Configuration
 @EnableWebSecurity
-@Order(1)
+@Order(0)
 public class SpringSecurityConfigAdmin extends WebSecurityConfigurerAdapter{
     
     @Autowired
