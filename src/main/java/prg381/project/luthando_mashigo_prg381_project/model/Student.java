@@ -22,7 +22,7 @@ public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "student_id")
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "student_name")
@@ -42,7 +42,7 @@ public class Student {
     @JoinTable(
         name = "student_roles",
         joinColumns = @JoinColumn(
-            name = "student_student_id", referencedColumnName = "student_id"),
+            name = "student_student_id", referencedColumnName = "id"),
         inverseJoinColumns = @JoinColumn(
             name = "role_student_id", referencedColumnName = "id"))
 
