@@ -31,6 +31,13 @@ public class StudentController {
 		return "Students";
 	}
 	
+    @GetMapping("/studentsview")
+    public String listStudentsView(Model model) {
+		model.addAttribute("students", studentService.getAllStudents());
+		return "StudentsView";
+	}
+	
+
 	@GetMapping("/students/new")
 	public String createStudentForm(Model model) {
 		
