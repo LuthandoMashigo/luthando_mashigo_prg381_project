@@ -12,6 +12,8 @@ import prg381.project.luthando_mashigo_prg381_project.service.StudentService;
 
 @Controller
 public class StudentController {
+
+	
     private StudentService studentService;
 
     public StudentController(StudentService studentService) {
