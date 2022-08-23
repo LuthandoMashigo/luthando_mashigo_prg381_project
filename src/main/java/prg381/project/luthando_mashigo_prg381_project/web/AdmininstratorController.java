@@ -23,8 +23,8 @@ public class AdmininstratorController {
 	public String createAdminForm(Model model) {
 		
 		// create student object to hold student form data
-		Administrator student = new Administrator();
-		model.addAttribute("student", student);
+		Administrator administrator = new Administrator();
+		model.addAttribute("administrator", administrator);
 		return "AdminRegistration";
 		
 	}
