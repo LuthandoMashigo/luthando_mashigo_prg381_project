@@ -16,6 +16,7 @@ import prg381.project.luthando_mashigo_prg381_project.service.StudentService;
 
 @Configuration
 @EnableWebSecurity
+//Only the Security Configuration with the Order with a lower number will have the Security Configuration active 
 @Order(2)
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter{
 
